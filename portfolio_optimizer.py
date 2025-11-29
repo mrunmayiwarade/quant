@@ -7,7 +7,7 @@ import scipy.optimize as optimize
 
 # --- PAGE CONFIGURATION ---
 st.set_page_config(page_title="Quant Portfolio Optimizer", layout="wide")
-st.title("🧠 Quant Portfolio Optimizer (Black-Litterman Lite)")
+st.title("Quant Portfolio Optimizer (Black-Litterman Lite)")
 
 # --- SIDEBAR: CONFIGURATION ---
 st.sidebar.header("1. Asset Selection")
@@ -60,7 +60,7 @@ if view_return != 0:
     target_asset = tickers[0]
     # We blend the historical mean with the user's view
     # In a real model, you'd use a confidence matrix (P and Omega)
-    st.info(f"💡 Applying view: Adjusting {target_asset} expected return by {view_return:.1%}")
+    st.info(f"Applying view: Adjusting {target_asset} expected return by {view_return:.1%}")
     adjusted_mean_returns[target_asset] += (view_return / 252) # De-annualize for daily calculation
 
 # 3. Optimization Engine
@@ -96,7 +96,7 @@ daily_var_95 = calculate_var(optimal_weights, adjusted_mean_returns, cov_matrix)
 col1, col2 = st.columns([1, 2])
 
 with col1:
-    st.subheader("🎯 Optimized Portfolio")
+    st.subheader("Optimized Portfolio")
     
     # Weights Table
     df_weights = pd.DataFrame({"Asset": tickers, "Weight": optimal_weights})
