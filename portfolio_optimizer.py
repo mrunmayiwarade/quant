@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.optimize as optimize
+import seaborn as sns
 
 # --- PAGE CONFIGURATION ---
 st.set_page_config(page_title="Quant Portfolio Optimizer", layout="wide")
